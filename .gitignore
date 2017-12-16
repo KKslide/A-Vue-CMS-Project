@@ -1,0 +1,14 @@
+#忽略第三方包
+node_modules
+
+#忽略打包后的代码
+dist/
+
+#忽略隐藏文件
+.*
+
+#不忽略babel配置文件和git文件
+!.babelrc
+!.gitignore
+
+
