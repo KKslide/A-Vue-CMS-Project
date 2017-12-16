@@ -1,6 +1,6 @@
 /* 导入axios与域名接口 */
 import axios from 'axios';
-import { domain } from './axios_config';
+import { domain } from './api_config';
 
 /* 配置默认域名 */
 axios.defaults.baseURL = domain;
