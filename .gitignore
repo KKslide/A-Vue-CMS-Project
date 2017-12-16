@@ -10,5 +10,5 @@ dist/
 #不忽略babel配置文件和git文件
 !.babelrc
 !.gitignore
-
+#卧槽这么麻烦
 
