@@ -1,5 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
+/* 导入axios模块和api配置 */
+import axios from './js/axios_config';
+import api from './js/api_config';
+Vue.prototype.$http = axios;
+Vue.prototype.$api = api;
+
+
 /* 启动Vue插件 */
 Vue.use(VueRouter);
 
@@ -7,7 +15,7 @@ Vue.use(VueRouter);
 import AppComponent from './component/App.vue';
 
 /* 导入路由配置 */
-import routerConfig from './router/router.js';
+import routerConfig from './router/index.js';
 
 /* 挂载根组件，启动应用 */
 new Vue({
