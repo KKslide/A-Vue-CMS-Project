@@ -3,3 +3,25 @@ body,
 main {
   height: 100%;
 }
+.el-form-item__label {
+  color: #fff;
+}
+.el-menu-item a {
+  text-decoration: none;
+  color: #fff;
+}
+/* 修改分页样式 */
+.el-pagination {
+  padding: 10px 0;
+  background-color: #e9eef3;
+}
+/* 商品列表的thead */
+.el-table thead tr {
+  background-color: #eee;
+}
+[class^=el-icon-] {
+  color: rgba(0, 0, 0, 0.3);
+}
+[class^=el-icon-].active {
+  color: #000;
+}

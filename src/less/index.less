@@ -1,3 +1,36 @@
-html,body,main{
+html,
+body,
+main {
     height: 100%;
+}
+
+.el-form-item__label {
+    color: #fff;
+}
+
+// 修改router-link的默认样式
+.el-menu-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* 修改分页样式 */
+
+.el-pagination {
+    padding: 10px 0;
+    background-color: #e9eef3;
+}
+
+/* 商品列表的thead */
+.el-table thead  tr{
+    background-color: #eee;
+}
+
+// 字体默认为浅灰
+[class^=el-icon-] {
+    color: rgba(0, 0, 0, 0.3);
+    &.active {
+        color: #000;
+    }
 }

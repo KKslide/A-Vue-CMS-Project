@@ -8,7 +8,7 @@
                 </section>
             <!-- 表单 -->
             <section>
-                <el-form :model="user" :rules="formRules" status-icon ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+                <el-form :model="user" :rules="formRules" :label-position="labelPosition" status-icon ref="ruleForm2" label-width="70px" class="demo-ruleForm">
                     <el-form-item label="用户名" prop="uname">
                         <el-input type="text" v-model="user.uname" auto-complete="off"></el-input>
                     </el-form-item>
@@ -42,15 +42,32 @@
                         { required: true, message: '请输入密码', trigger: 'blur'},
                         { pattern: /.{6,18}/, message: '长度在6到18个子字符', trigger: 'blur'}
                     ]
-                }
+                },
+                labelPosition:'left'
             }
         },
         methods: {
+        /* 登陆页面跳转 */
+        /* 1.status是否为0，
+        2.0---登陆成功，本地存储localStorage
+        3.跳转后台首页 */
+        login(){
+            this.$http.post(this.$api.login, this.user)
+                .then(res => {
+                    let {status,message}=res.data;
+                    if(status==0){
+                        localStorage.setItem('user',JSON.stringify(message));
+                        this.$router.push('/');
+                    }else{
+                        alert('兄弟，你又输错了');
+                    }
+                });
+        },
+
         submitForm(formName) {
             this.$refs[formName].validate((result)=>{
                 if(result){
-                    this.$http.post(this.$api.login,this.user)
-                        .then(rep=>alert(rep.data.message.realname));
+                    this.login();
                 }else{
                     alert('我靠你逗玩呢？？？');
                 }
@@ -81,8 +98,5 @@
                 text-align: center;
             }
         }
-            .el-form-item__label{
-                color: #fff !important;
-            }
     }
 </style>
