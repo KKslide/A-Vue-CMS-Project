@@ -5,7 +5,7 @@ import { domain } from './api_config';
 /* 配置默认域名 */
 axios.defaults.baseURL = domain;
 
-/* 跨域请求，默认不带cookie等信息，单后端需要此类信息来判断状态，所以改为true */
+/* 跨域请求，默认不带cookie等信息，但后端需要此类信息来判断状态，所以改为true */
 axios.defaults.withCredentials = true;
 
 /* 导出，暴露 */

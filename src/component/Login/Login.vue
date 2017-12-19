@@ -16,7 +16,7 @@
                         <el-input type="password" v-model="user.upwd" auto-complete="off"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
+                        <el-button :plain="true" type="primary" @click="submitForm('ruleForm2')">提交</el-button>
                         <el-button @click="resetForm('ruleForm2')">重置</el-button>
                     </el-form-item>
                 </el-form>
@@ -58,8 +58,12 @@
                     if(status==0){
                         localStorage.setItem('user',JSON.stringify(message));
                         this.$router.push('/');
+                        this.$message({
+                            message: '恭喜您，登陆成功！',
+                            type: 'success'
+                        });
                     }else{
-                        alert('兄弟，你又输错了');
+                        this.$message.error('密码错了');
                     }
                 });
         },

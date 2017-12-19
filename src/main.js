@@ -24,6 +24,12 @@ import AppComponent from './component/App.vue';
 /* 导入路由配置 */
 import routerConfig from './router/index.js';
 
+/* 导入路由守卫函数 */
+import routerGuard from './router/guard.js';
+const vueRouter = new VueRouter(routerConfig);
+vueRouter.beforeEach(routerGuard);
+
+
 /* 挂载根组件，启动应用 */
 new Vue({
     el: '#app',
@@ -31,5 +37,5 @@ new Vue({
     // render(createElement){
     //     return createElement(AppComponent);
     // }
-    router: new VueRouter(routerConfig)
+    router: vueRouter
 });
