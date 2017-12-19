@@ -8,10 +8,16 @@ main {
     color: #fff;
 }
 
+/* 侧边栏隐藏滚动条 */
+.el-menu-vertical-demo{
+    overflow: hidden;
+}
+
 // 修改router-link的默认样式
 .el-menu-item a {
     text-decoration: none;
     color: #fff;
+    display: block;
 }
 
 
@@ -33,4 +39,20 @@ main {
     &.active {
         color: #000;
     }
+}
+
+/* 开关的样式设置 */
+.el-switch__label--right{
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+/* 编辑页面样式 */
+.el-form-item__label{
+    color: #666;
+}
+
+a{
+    text-decoration: none;
+    color: #2a72c5;
 }

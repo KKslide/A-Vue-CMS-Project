@@ -4,7 +4,7 @@
             <!-- logo -->
                 <section class="login_content_logo">
                     <!-- ../../img/logo.png -->
-                    <img src="../../img/logo.png" alt="">
+                    <img src="../../img/logo.jpg" alt="">
                 </section>
             <!-- 表单 -->
             <section>
@@ -85,22 +85,22 @@
 </script>
 
 <style scoped lang="less">
-    .login{
-        height:100%;
-        background-color: #2277bb;
-        &_content{
+    
+    .login {
+        background-color: #1f1c17;
+        height: 100%;
+        position: relative;
+        &_content {
+            height: 100%;
             width: 400px;
             position: absolute;
+            top: 0;
             left: 50%;
-            top: 50%;
-            border: 1px solid #fff;
-            padding: 10px;
-            border-radius: 5px;
-            margin-left: -200px;
-            margin-top: -150px;
-            &_logo {
+            transform: translate(-50%);
+            .login_content_logo {
                 text-align: center;
             }
         }
     }
+
 </style>

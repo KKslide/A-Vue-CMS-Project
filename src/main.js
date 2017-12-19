@@ -9,9 +9,12 @@ import './less/index.less';
 
 /* 导入axios模块和api配置 */
 import axios from './js/axios_config.js';
-import api from './js/api_config.js';
+import api, { domain } from './js/api_config.js';
+
+
 Vue.prototype.$http = axios;
 Vue.prototype.$api = api;
+Vue.prototype.$apiDomain = domain;
 
 
 /* 启动Vue插件 */

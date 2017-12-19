@@ -12,7 +12,9 @@
         <section class="tool_util">
             <!-- 左边按钮 -->
             <div class="tool_util_btns">
-                <el-button icon="el-icon-circle-plus" size="small">新增</el-button>
+                <el-button icon="el-icon-circle-plus" size="small">
+                    <router-link :to="{name:'gcta'}">新增</router-link>
+                </el-button>
                 <el-button icon="el-icon-success" size="small">全选</el-button>
                 <el-button icon="el-icon-error" size="small">删除</el-button>
             </div>
@@ -35,7 +37,12 @@
         <el-table-column type="selection" width="55"></el-table-column>
 
         <!-- label设置表头  prop用来展示 要渲染的字段  template用来渲染不是字符串的东西-->
-        <el-table-column prop="title" label="标题" ></el-table-column>
+        <el-table-column label="标题" >
+            <template slot-scope="scope">
+                <router-link :to="{name: 'gcte', params: {id: scope.row.id}}">{{scope.row.title}}</router-link>
+            </template>
+        </el-table-column>
+
         <el-table-column prop="categoryname" label="所属类别" width="100"></el-table-column>
         <el-table-column prop="stock_quantity" label="库存" width="100"></el-table-column>
         <el-table-column prop="market_price" label="市场价" width="100"></el-table-column>
@@ -53,7 +60,8 @@
 
         <el-table-column label="操作" width="100">
             <template slot-scope="scope">
-                <a href="">修改</a>
+                <!-- <a href="">修改</a> -->
+                <router-link :to="{name: 'gcte', params: {id: scope.row.id}}">修改</router-link>
             </template>
         </el-table-column>
 
